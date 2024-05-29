@@ -1,3 +1,4 @@
+/* General Styles */
 body, html {
     margin: 0;
     padding: 0;
@@ -7,6 +8,7 @@ body, html {
     overflow-x: hidden;
 }
 
+/* Header Styles */
 .header {
     background-color: black;
     color: white;
@@ -23,13 +25,14 @@ body, html {
     z-index: 1000;
 }
 
+/* Navigation Styles */
 .navigation {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #CCFF66;
-    height: 90px;
+    height: 60px; /* Reduced height */
     font-weight: bold;
     position: fixed;
     top: 37px;
@@ -43,7 +46,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 60px;
+    gap: 40px; /* Adjusted gap */
     height: 100%;
 }
 
@@ -51,37 +54,39 @@ body, html {
     color: black;
     text-decoration: none;
     font-size: 16px;
-    line-height: 100px; /* Центрирование текста по вертикали */
+    line-height: 60px; /* Adjusted line-height for vertical alignment */
 }
 
+/* Register Button Styles */
 .register-button {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     position: fixed;
-    top: 105px; /* Положение кнопки */
+    top: 97px; /* Adjusted for new navigation height */
     z-index: 998;
 }
 
 .button {
     padding: 12px 24px;
-    font-size: 21.6px;
+    font-size: 18px; /* Slightly reduced for better fit */
     color: black;
-    border: 2.4px solid black;
+    border: 2px solid black;
     text-decoration: none;
     text-align: center;
     border-radius: 6px;
     background-color: #CCFF66;
 }
 
+/* Background Image Styles */
 .background-image {
     background-image: url('../img/image1.png');
     background-size: cover;
     background-position: center;
-    height: calc(100% - 142px);
+    height: 100%;
     width: 100%;
     position: fixed;
-    top: 142px;
+    top: 117px; /* Adjusted for new navigation height */
     z-index: -1;
 }
