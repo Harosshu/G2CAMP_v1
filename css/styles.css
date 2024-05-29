@@ -1,0 +1,171 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#video-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.back-arrow {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+    padding: 10px;
+}
+
+.back-arrow a {
+    color: white;
+    text-decoration: none;
+    font-size: 60px;
+}
+
+.back-arrow a:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    max-width: 240px; /* Увеличен размер логотипа в 1.2 раза */
+    margin-bottom: 20px;
+}
+
+.buttons, .camp-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.camp-buttons {
+    flex-direction: row;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: white;
+    font-size: 30px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    min-width: 150px;
+    margin: 15px 10px;
+    padding: 22.5px 0;
+    font-size: 30px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.button:hover {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+    .logo {
+        max-width: 180px;
+    }
+    .button {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .camp-buttons {
+        flex-direction: column;
+    }
+    .logo {
+        max-width: 144px;
+    }
+    .button {
+        width: 90%;
+        margin: 10px 0;
+        padding: 20px 0;
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .back-arrow a {
+        font-size: 70px;
+    }
+    .button {
+        width: 100%;
+        margin: 10px 0;
+        padding: 15px 0;
+        font-size: 20px;
+    }
+    .message {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 320px) {
+    .video-background {
+        display: none;
+    }
+    .container::before {
+        background: rgba(0, 0, 0, 0.7);
+    }
+}

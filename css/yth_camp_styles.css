@@ -1,0 +1,87 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #CCFF66;
+    height: 90px;
+    font-weight: bold;
+    position: fixed;
+    top: 37px;
+    width: 100%;
+    z-index: 999;
+    overflow: hidden;
+    box-shadow: 0 20px 20px 20px #CCFF66;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    height: 100%;
+}
+
+.nav-link {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 100px; /* Центрирование текста по вертикали */
+}
+
+.register-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 105px; /* Положение кнопки */
+    z-index: 998;
+}
+
+.button {
+    padding: 12px 24px;
+    font-size: 21.6px;
+    color: black;
+    border: 2.4px solid black;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 6px;
+    background-color: #CCFF66;
+}
+
+.background-image {
+    background-image: url('../img/image1.png');
+    background-size: cover;
+    background-position: center;
+    height: calc(100% - 142px);
+    width: 100%;
+    position: fixed;
+    top: 142px;
+    z-index: -1;
+}
