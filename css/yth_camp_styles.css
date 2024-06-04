@@ -1,28 +1,40 @@
-/* General Styles */
+:root {
+    --main-color: #deff66;
+    --main-font: Arial, sans-serif;
+    --nav-height: 90px;
+    --gradient-color: #deff66;
+}
+
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
-    font-family: Arial, sans-serif;
+    font-family: var(--main-font);
     overflow-x: hidden;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    position: relative;
 }
 
-/* Header Styles */
+body::-webkit-scrollbar {
+    display: none; /* Для Chrome, Safari и Opera */
+}
+
+/* Video Styles */
 .header {
-    background-color: black;
-    color: white;
-    text-align: center;
-    height: 37px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    font-weight: bold;
     position: fixed;
-    top: 0;
     width: 100%;
+    top: 0;
+    height: 50px;
     z-index: 1000;
+    overflow: hidden;
+    transition: top 0.3s; /* плавная анимация */
+}
+
+.header-video {
+    width: 100%;
+    height: auto; 
 }
 
 /* Navigation Styles */
@@ -31,22 +43,22 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #CCFF66;
-    height: 60px; /* Reduced height */
+    background-color: var(--main-color);
+    height: var(--nav-height);
     font-weight: bold;
     position: fixed;
-    top: 37px;
+    top: 30px;
     width: 100%;
     z-index: 999;
     overflow: hidden;
-    box-shadow: 0 20px 20px 20px #CCFF66;
+    box-shadow: 0 20px 20px 20px var(--main-color);
 }
 
 .nav-links {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px; /* Adjusted gap */
+    gap: 40px;
     height: 100%;
 }
 
@@ -54,39 +66,194 @@ body, html {
     color: black;
     text-decoration: none;
     font-size: 16px;
-    line-height: 60px; /* Adjusted line-height for vertical alignment */
+    line-height: var(--nav-height);
 }
 
-/* Register Button Styles */
 .register-button {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     position: fixed;
-    top: 97px; /* Adjusted for new navigation height */
+    top: calc(7px + var(--nav-height));
     z-index: 998;
 }
 
 .button {
     padding: 12px 24px;
-    font-size: 18px; /* Slightly reduced for better fit */
+    font-size: 18px;
     color: black;
     border: 2px solid black;
     text-decoration: none;
     text-align: center;
     border-radius: 6px;
-    background-color: #CCFF66;
+    background-color: var(--main-color);
+    transition: transform 0.3s;
 }
 
-/* Background Image Styles */
-.background-image {
-    background-image: url('../img/image1.png');
-    background-size: cover;
-    background-position: center;
-    height: 100%;
+.gradient-overlay {
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    position: fixed;
-    top: 117px; /* Adjusted for new navigation height */
-    z-index: -1;
+    height: 15vh;
+    background: linear-gradient(to bottom, transparent, var(--gradient-color));
+}
+
+.overlay-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 200px;
+    width: 600px;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    height: auto;
+}
+
+.details {
+    text-align: center;
+}
+
+.details-content {
+    padding: 140px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.full-screen-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 200px;
+    width: 600px;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    height: auto;
+}
+
+.location-info {
+    background-color: var(--main-color);
+    margin-bottom: 170px;
+    margin-top: -40px;
+}
+
+.location-info h2 {
+    font-size: 1.5em;
+    margin: 0px 0px;
+}
+
+.location-info h3 {
+    font-size: 1.5em;
+    margin: -22.5px 0px;
+}
+
+.location-info p {
+    font-size: 0.6em;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.location-info a {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.details-info {
+    background-color: var(--main-color);
+    padding: 40px;
+    width: 100%;
+    box-shadow: 0 20px 20px 20px var(--main-color);
+}
+
+.details-info-inner {
+    max-width: 500px;
+    margin: 0 500px; /* Центрирование внутреннего контейнера */
+}
+
+.details-info h1 {
+    font-size: 4.5em; /* Размер заголовка */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.details-info h2 {
+    font-size: 1.3em; /* Размер заголовка */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.details-info p {
+    font-size: 1.2em; /* Размер текста */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.details-info video {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px; /* Скругление углов */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+
+
+.price, .faqs {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.price-content, .faq-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.price-box {
+    background-color: white;
+    border: 2px solid black;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+}
+
+.faq-item button {
+    background-color: var(--main-color);
+    border: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    cursor: pointer;
+    outline: none;
+}
+
+.faq-content {
+    display: none;
+    background-color: white;
+    padding: 10px;
+}
+
+.faq-item button:focus + .faq-content {
+    display: block;
+}
+
+footer {
+    padding: 20px;
+    background-color: var(--main-color);
+    text-align: center;
 }

@@ -7,24 +7,46 @@
     <link rel="stylesheet" href="css/yth_camp_styles.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="header">
-        <p>УСПЕЙ ЗАРЕГИСТРИРОВАТЬСЯ</p>
-    </header>
+    <!-- Video Section -->
+    <div class="header">
+        <video class="header-video" src="img/reg_loop.mp4" autoplay muted loop></video>
+    </div>
 
     <!-- Navigation Section -->
     <nav class="navigation">
         <div class="nav-links">
+            <a href="index.html" class="nav-link">ГЛАВНАЯ</a>
             <a href="#details" class="nav-link">ДЕТАЛИ</a>
             <a href="#price" class="nav-link">ЦЕНА</a>
-            <a href="#faqs" class="nav-link">FAQs</a>
+            <a href="#faqs" class="nav-link">FAQS</a>
         </div>
         <div class="register-button">
-            <a href="#register" class="button">РЕГИСТРАЦИЯ</a>
+            <a href="#register" class="button">РЕГИСТРАЦИЯ В ЛАГЕРЬ</a>
         </div>
     </nav>
 
-    <!-- Background Image Section -->
-    <div class="background-image"></div>
+    <!-- Details Section -->
+    <section id="details" class="details">
+        <div class="details-content">
+            <div class="image-container">
+                <img src="img/image1.png" alt="Image 1" class="full-screen-image">
+                <div class="gradient-overlay"></div>
+                <img src="img/b_camp_emk.png" alt="Image 2" class="overlay-image">
+            </div>
+            <div class="details-info">
+                <div class="location-info">
+                    <h2>IDA-VIRUMA, ESTONIA</h2>
+                    <h3>JULY 1-6, 2024</h3>
+                    <p><a href="https://www.metodistikirik.ee/?lang=ru" target="_blank">Узнать больше об EMK →</a></p>
+                </div>
+                <div class="details-info-inner">
+                    <h1>G2CAMP</h1>
+                    <h2>ШЕСТИ ДНЕВЫЙ ЛЕТНИЙ ЛАГЕРЬ ДЛЯ МОЛОДЕЖИ.</h2>
+                    <p>LOREM IPSUM DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT. FACILIS EIUS EAQUE IPSUM IPSAM QUAE DISTINCTIO DEBITIS ESSE MOLLITIA? TEMPORIBUS PLACEAT IURE BEATAE?</p>
+                    <video src="img/video_about.mp4" controls></video>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
